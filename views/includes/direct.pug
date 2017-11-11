@@ -1,0 +1,14 @@
+.grid-33
+  .app--section
+    ul.app--message--list
+      each item in directMessages
+        li
+          h3
+            | Conversation with 
+            a= item.name
+          ul.app--message--conversation
+            li.app--message
+              .app--avatar(style='background-image: url("' + item.profile_image_url + '")')
+                img(src=item.profile_image_url) 
+              p.app--message--text= item.text
+              p.app--message--timestamp= item.created_at
